@@ -1,9 +1,10 @@
 jupyter
+lime
 numpy
 pandas
 pyarrow
 PyGithub
 requests
-sklearn
+scikit-learn
 snorkel
 spacy
