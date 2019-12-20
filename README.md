@@ -85,7 +85,6 @@ and Snorkel.
 
 The labels for this dataset are:
 
-<<<<<<< HEAD
 | Number | Code      | Description                      |
 |--------|-----------|----------------------------------|
 | -1     | ABSTAIN   | No vote, for Labeling Functions  |
@@ -93,15 +92,24 @@ The labels for this dataset are:
 | 1      | API       | An API library for AWS           |
 | 2      | EDUCATION | An educational example for AWS   |
 | 3      | DATASET   | An open dataset by Amazon        |
-=======
-| Number | Code      |
-|--------|-----------|
-| -1     | ABSTAIN   |
-| 0      | GENERAL   |
-| 1      | API       |
-| 2      | EDUCATION |
-| 3      | DATASET   |
->>>>>>> c9885e5... Moved images to images directory
+
+### Labeling Functions
+
+Labeling functions each weakly label the data and need only be better than random. Snorkel's
+unsupervised generative graphical model combines these weak labels into strong labels by 
+looking at the overlap, conflict and coverage of each weak label set.
+
+| Logic                  | Fields                               | Label       | 200 Sample Accuracy |
+|------------------------|--------------------------------------|-------------|---------------------|
+| If 'sdk' is in         | `full_name`, `description`, `readme` | `API`       |                     |
+| If 'sample' is in      | `full_name`, `description`, `readme` | `EDUCATION` |                     |
+| If 'dataset' is in     | `full_name`, `description`, `readme` | `DATASET`   |                     |
+| If 'demonstrate' is in | `full_name`, `description`, `readme` | `EDUCATION` |                     |
+| If 'walkthrough' is in | `full_name`, `description`, `readme` | `EDUCATION` |                     |
+| If 'skill' is in       | `full_name`, `description`           | `EDUCATION` |                     |
+| If 'kit' is in         | `full_name`, `description`           | `EDUCATION` |                     |
+| If 'toolbox' is in     | `description`                        | `GENERAL`   |                     |
+|                        |                                      |             |                     |
 
 ## Running the Analysis
 
