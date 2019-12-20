@@ -75,11 +75,14 @@ of each data program into strong labels for all of the records.
 
 The 200 labeled records along with the rest of the records describing the 2,469 repositories 
 claimed by Amazon as of December 19, 2019, are available in a Google Doc 
-[here](https://docs.google.com/spreadsheets/d/1ULt0KxIdb5HUJCEMt_AmOuPbTvN1zg8UA_4RvjlVwXQ/edit?usp=sharing). 
+[here](https://docs.google.com/spreadsheets/d/1ULt0KxIdb5HUJCEMt_AmOuPbTvN1zg8UA_4RvjlVwXQ/edit?usp=sharing) 
+and was exported to CSV at [data/Amazon_Open_Source_Analysis_Gold.csv](data/Amazon_Open_Source_Analysis_Gold.csv).
 The idea is that if anyone disputes this example's conclusions, they can hand label the 
-entire dataset themselves and do so with hard evidence. I could then incorporate this new
-labeling in the analysis I performed in place of the data labeled using weak supervision
-and Snorkel.
+entire dataset themselves and re-run the notebook's analysis substituting that file.
+
+### Submitting Corrections or Additions
+
+If you feel any labels are wrong, first read the definitions in the README and comment on the sheet. You may also copy the Google Sheet and continue labeling yourself if you want to ensure the accuracy of this analysis.
 
 ### Label Schema
 
@@ -90,7 +93,7 @@ The labels for this dataset are:
 | -1     | ABSTAIN   | No vote, for Labeling Functions  |
 | 0      | GENERAL   | A FOSS project of general appeal |
 | 1      | API       | An API library for AWS           |
-| 2      | EDUCATION | An educational example for AWS   |
+| 2      | EDUCATION | An educational library for AWS   |
 | 3      | DATASET   | An open dataset by Amazon        |
 
 ### Labeling Functions
@@ -99,40 +102,23 @@ Labeling functions each weakly label the data and need only be better than rando
 unsupervised generative graphical model combines these weak labels into strong labels by 
 looking at the overlap, conflict and coverage of each weak label set.
 
-| Logic                  | Fields                               | Label       | 200 Sample Accuracy |
-|------------------------|--------------------------------------|-------------|---------------------|
-| If 'sdk' is in         | `full_name`, `description`, `readme` | `API`       |                     |
-| If 'sample' is in      | `full_name`, `description`, `readme` | `EDUCATION` |                     |
-| If 'dataset' is in     | `full_name`, `description`, `readme` | `DATASET`   |                     |
-| If 'demonstrate' is in | `full_name`, `description`, `readme` | `EDUCATION` |                     |
-| If 'walkthrough' is in | `full_name`, `description`, `readme` | `EDUCATION` |                     |
-| If 'skill' is in       | `full_name`, `description`           | `EDUCATION` |                     |
-| If 'kit' is in         | `full_name`, `description`           | `EDUCATION` |                     |
-| If 'toolbox' is in     | `description`                        | `GENERAL`   |                     |
-|                        |                                      |             |                     |
+| Logic                           | Fields                               | Label       | 200 Sample Accuracy |
+|---------------------------------|--------------------------------------|-------------|---------------------|
+| If 'sdk' is in                  | `full_name`, `description`, `readme` | `API`       |                     |
+| If 'sample' is in               | `full_name`, `description`, `readme` | `EDUCATION` |                     |
+| If 'dataset' is in              | `full_name`, `description`, `readme` | `DATASET`   |                     |
+| If 'demonstrate' / 'demo' is in | `full_name`, `description`, `readme` | `EDUCATION` |                     |
+| If 'walkthrough is in           | `full_name`, `description`, `readme` | `EDUCATION` |                     |
+| If 'skill' is in                | `full_name`, `description`           | `EDUCATION` |                     |
+| If 'kit' is in                  | `full_name`, `description`           | `EDUCATION` |                     |
+| If 'toolbox' is in              | `description`                        | `GENERAL`   |                     |
+| if 'extension' is in            | `description`                        | `API`       |                     |
+| id 'add amazon' is in           | `description`                        | `API`       |                     |
+| if 'integrate' is in            | `description`                        | `API`       |                     |
+| if 'ion' is in                  | `full_name`, `description`           | `GENERAL`   |                     |
+|                                 |                                      |             |                     |
+|                                 |                                      |             |                     |
 
-### Labeling Functions
-
-Labeling functions each weakly label the data and need only be better than random. Snorkel's
-unsupervised generative graphical model combines these weak labels into strong labels by 
-looking at the overlap, conflict and coverage of each weak label set.
-
-| Logic                  | Fields                               | Label       | 200 Sample Accuracy |
-|------------------------|--------------------------------------|-------------|---------------------|
-| If 'sdk' is in         | `full_name`, `description`, `readme` | `API`       |                     |
-| If 'sample' is in      | `full_name`, `description`, `readme` | `EDUCATION` |                     |
-| If 'dataset' is in     | `full_name`, `description`, `readme` | `DATASET`   |                     |
-| If 'demonstrate' is in | `full_name`, `description`, `readme` | `EDUCATION` |                     |
-| If 'walkthrough' is in | `full_name`, `description`, `readme` | `EDUCATION` |                     |
-| If 'skill' is in       | `full_name`, `description`           | `EDUCATION` |                     |
-| If 'kit' is in         | `full_name`, `description`           | `EDUCATION` |                     |
-| If 'toolbox' is in     | `description`                        | `GENERAL`   |                     |
-|                        |                                      |             |                     |
-|                        |                                      |             |                     |
-|                        |                                      |             |                     |
-|                        |                                      |             |                     |
-|                        |                                      |             |                     |
-|                        |                                      |             |                     |
 
 ## Running the Analysis
 
