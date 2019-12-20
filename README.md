@@ -111,6 +111,29 @@ looking at the overlap, conflict and coverage of each weak label set.
 | If 'toolbox' is in     | `description`                        | `GENERAL`   |                     |
 |                        |                                      |             |                     |
 
+### Labeling Functions
+
+Labeling functions each weakly label the data and need only be better than random. Snorkel's
+unsupervised generative graphical model combines these weak labels into strong labels by 
+looking at the overlap, conflict and coverage of each weak label set.
+
+| Logic                  | Fields                               | Label       | 200 Sample Accuracy |
+|------------------------|--------------------------------------|-------------|---------------------|
+| If 'sdk' is in         | `full_name`, `description`, `readme` | `API`       |                     |
+| If 'sample' is in      | `full_name`, `description`, `readme` | `EDUCATION` |                     |
+| If 'dataset' is in     | `full_name`, `description`, `readme` | `DATASET`   |                     |
+| If 'demonstrate' is in | `full_name`, `description`, `readme` | `EDUCATION` |                     |
+| If 'walkthrough' is in | `full_name`, `description`, `readme` | `EDUCATION` |                     |
+| If 'skill' is in       | `full_name`, `description`           | `EDUCATION` |                     |
+| If 'kit' is in         | `full_name`, `description`           | `EDUCATION` |                     |
+| If 'toolbox' is in     | `description`                        | `GENERAL`   |                     |
+|                        |                                      |             |                     |
+|                        |                                      |             |                     |
+|                        |                                      |             |                     |
+|                        |                                      |             |                     |
+|                        |                                      |             |                     |
+|                        |                                      |             |                     |
+
 ## Running the Analysis
 
 The actual analysis is in a Jupyter Notebook called [Amazon Open Source Analysis.ipynb](Amazon Open Source Analysis.ipynb).
