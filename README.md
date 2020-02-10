@@ -1,34 +1,33 @@
 # Analyzing Amazon's Free and Open Source Software (FOSS) Contributions
 
-This project analyzes Amazon's Free and Open Source Software (FOSS) Contributions to 
-determine the extent to which they behave as good citizens of the open source community. 
+This project analyzes Amazon's Free and Open Source Software (FOSS) Contributions to
+determine the extent to which they behave as good citizens of the open source community.
 Much has been said about Amazon and open source software, much of it good from Amazon and
-much of it bad from the community. But what is the reality? Numbers that tend to indicate 
-good citizenship are cited by Amazon, Google, Microsoft and other cloud providers but they 
-are never checked for accuracy, honesty and integrity. This project aims to change that by 
+much of it bad from the community. But what is the reality? Numbers that tend to indicate
+good citizenship are cited by Amazon, Google, Microsoft and other cloud providers but they
+are never checked for accuracy, honesty and integrity. This project aims to change that by
 rigorously evaluating the open source contributions of cloud providers, starting with Amazon.
 
-
-This project is an attempt to check the veracity of the claim made by Deirdré Straughan, managing editor of the AWS Open Source blog, on April 8, 2019 that, "Amazon has contributed [over 1,800 projects](https://github.com/search?utf8=%E2%9C%93&q=+user%3Aalexa+user%3Aamzn+user%3Aaws+user%3Aawsdocs+user%3Aawslabs+user%3Aaws-quickstart+user%3Ablox+user%3Aboto+user%3Ac9+user%3Acorretto+user%3Afirecracker-microvm+user%3Aaws-robotics+user%3Aajaxorg+user%3Agluon-api+user%3Acloud9ide+user%3ACarbonado+user%3Agoodreads+user%3AIvonaSoftware+user%3Atwitchtv+user%3Atwitchdev+user%3Atwitchscience+user%3Ajustintv+user%3AZappos+user%3Aamazon-archives+user%3Aalexa-labs+user%3Aaws-samples+user%3Aaws-amplify+user%3Aaws-cloudformation+user%3Aaws-solutions+user%3Aopendistro-for-elasticsearch+user%3Aopendistro&type=Repositories&ref=advsearch&l=&l=) 
-across 30 GitHub organizations ranging from [Alexa](https://github.com/alexa) to 
-[Zappos](https://github.com/Zappos). You can search them all from 
+This project is an attempt to check the veracity of the claim made by Deirdré Straughan, managing editor of the AWS Open Source blog, on April 8, 2019 that, "Amazon has contributed [over 1,800 projects](https://github.com/search?utf8=%E2%9C%93&q=+user%3Aalexa+user%3Aamzn+user%3Aaws+user%3Aawsdocs+user%3Aawslabs+user%3Aaws-quickstart+user%3Ablox+user%3Aboto+user%3Ac9+user%3Acorretto+user%3Afirecracker-microvm+user%3Aaws-robotics+user%3Aajaxorg+user%3Agluon-api+user%3Acloud9ide+user%3ACarbonado+user%3Agoodreads+user%3AIvonaSoftware+user%3Atwitchtv+user%3Atwitchdev+user%3Atwitchscience+user%3Ajustintv+user%3AZappos+user%3Aamazon-archives+user%3Aalexa-labs+user%3Aaws-samples+user%3Aaws-amplify+user%3Aaws-cloudformation+user%3Aaws-solutions+user%3Aopendistro-for-elasticsearch+user%3Aopendistro&type=Repositories&ref=advsearch&l=&l=)
+across 30 GitHub organizations ranging from [Alexa](https://github.com/alexa) to
+[Zappos](https://github.com/Zappos). You can search them all from
 [aws.github.com](https://aws.github.io/)."
 
 This link shows 2,469 repository results as of Dec 18, 2019.
 
 ## Image of the Original Quote
 
-![](images/amazon_1800_projects.png)
+![Did You Know?, Dec 18, 2019](images/amazon_1800_projects.png)
 
 ## aws.github.io
 
 Note that this query is also present in the search box at [https://aws.github.io/](https://aws.github.io/), clicking submit takes you [here](https://github.com/search?utf8=%E2%9C%93&q=+user%3Aalexa+user%3Aamzn+user%3Aaws+user%3Aawsdocs+user%3Aawslabs+user%3Aaws-quickstart+user%3Ablox+user%3Aboto+user%3Ac9+user%3Acorretto+user%3Afirecracker-microvm+user%3Aaws-robotics+user%3Aajaxorg+user%3Agluon-api+user%3Acloud9ide+user%3ACarbonado+user%3Agoodreads+user%3AIvonaSoftware+user%3Atwitchtv+user%3Atwitchdev+user%3Atwitchscience+user%3Ajustintv+user%3AZappos+user%3Aamazon-archives+user%3Aalexa-labs+user%3Aaws-samples+user%3Aaws-amplify+user%3Aaws-cloudformation+user%3Aaws-solutions+user%3Aopendistro-for-elasticsearch+user%3Aopendistro&type=Repositories&ref=advsearch&l=&l=) (which is the same query). This link shows 2,469 repository results as of Dec 18, 2019.
 
-![](images/aws.github.io.png)
+![Open Source at AWS, Dec 18, 2019](images/aws.github.io.png)
 
 ## What is the point of this?
 
-It is critical that the community check the veracity of claims of cloud vendors like this one because as they capture more and more of the value of free and open source software through Software as a Service (SaaS) APIs in their clouds, it is essential that they step up and contribute to replace those contributors who no longer run their own software and thus no longer patch it. 
+It is critical that the community check the veracity of claims of cloud vendors like this one because as they capture more and more of the value of free and open source software through Software as a Service (SaaS) APIs in their clouds, it is essential that they step up and contribute to replace those contributors who no longer run their own software and thus no longer patch it.
 
 Bad actors in open source harm the community. But who bad? Let's find out!
 
@@ -64,20 +63,19 @@ The data as of December 19, 2019 is included in this repository's [data/](data/)
 
 This data is then loaded in the Jupyter Notebook where the analysis occurs.
 
-
 ## Evaluating the Training Data
 
 Because it was not feasible for the author to hand label all the data, and because he is
-writing a book called *Weakly Supervised Learning* and needed an example topic, this project 
-uses *weak supervision* to take a sample of 200 labeled records that guide data programming 
-to label the rest using Snorkel's unsupervised generative model to combine the weak labels 
+writing a book called *Weakly Supervised Learning* and needed an example topic, this project
+uses *weak supervision* to take a sample of 200 labeled records that guide data programming
+to label the rest using Snorkel's unsupervised generative model to combine the weak labels
 of each data program into strong labels for all of the records.
 
-The 200 labeled records along with the rest of the records describing the 2,469 repositories 
+The 200 labeled records along with the rest of the records describing the 2,469 repositories
 claimed by Amazon as of December 19, 2019, are available in a Google Doc 
-[here](https://docs.google.com/spreadsheets/d/1ULt0KxIdb5HUJCEMt_AmOuPbTvN1zg8UA_4RvjlVwXQ/edit?usp=sharing) 
+[here](https://docs.google.com/spreadsheets/d/1ULt0KxIdb5HUJCEMt_AmOuPbTvN1zg8UA_4RvjlVwXQ/edit?usp=sharing)
 and was exported to CSV at [data/Amazon_Open_Source_Analysis_Gold.csv](data/Amazon_Open_Source_Analysis_Gold.csv).
-The idea is that if anyone disputes this example's conclusions, they can hand label the 
+The idea is that if anyone disputes this example's conclusions, they can hand label thes
 entire dataset themselves and re-run the notebook's analysis substituting that file.
 
 ### Submitting Corrections or Additions
@@ -99,7 +97,7 @@ The labels for this dataset are:
 ### Labeling Functions
 
 Labeling functions each weakly label the data and need only be better than random. Snorkel's
-unsupervised generative graphical model combines these weak labels into strong labels by 
+unsupervised generative graphical model combines these weak labels into strong labels by
 looking at the overlap, conflict and coverage of each weak label set.
 
 | Logic                           | Fields                               | Label       | 200 Sample Accuracy |
@@ -119,7 +117,6 @@ looking at the overlap, conflict and coverage of each weak label set.
 |                                 |                                      |             |                     |
 |                                 |                                      |             |                     |
 
-
 ## Running the Analysis
 
 The actual analysis is in a Jupyter Notebook called [Amazon Open Source Analysis.ipynb](Amazon Open Source Analysis.ipynb).
@@ -127,7 +124,6 @@ The actual analysis is in a Jupyter Notebook called [Amazon Open Source Analysis
 ### Creating a Personal Access Token
 
 If you want to fetch the latest READMEs of Amazon's repositories, you will need to [create a Github personal access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) and set it to the environment variable `GITHUB_PERSONAL_TOKEN`.
-
 
 ### Starting Jupyter
 
@@ -138,4 +134,3 @@ GITHUB_PERSONAL_TOKEN=<GITHUB_PERSONAL_TOKEN> jupyter notebook
 ```
 
 Then open the url: [http://localhost:8888](http://localhost:8888)
-
