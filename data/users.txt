@@ -1,30 +1,3 @@
-alexa
-amzn
-aws
-awsdocs
-awslabs
-aws-quickstart
-blox
-boto
-c9
-corretto
-firecracker-microvm
-aws-robotics
-ajaxorg
-gluon-api
-cloud9ide
-Carbonado
-goodreads
-IvonaSoftware
-twitchtv
-twitchdev
-twitchscience
-justintv
-Zappos
-amazon-archives
-alexa-labs
-aws-samples
-aws-amplify
-aws-cloudformation
-aws-solutions
-opendistro-for-elasticsearch
+version https://git-lfs.github.com/spec/v1
+oid sha256:fa059f60b858ca5f60232d4a66a32e89b6f1619c4ed493f0451ba564dfaaf2c8
+size 325
