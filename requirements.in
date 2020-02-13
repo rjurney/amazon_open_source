@@ -1,10 +1,8 @@
 jupyter
 jupyter_console
-lime
 numpy
 pandas
 pyarrow
-PyGithub
 requests
 scikit-learn
 snorkel
