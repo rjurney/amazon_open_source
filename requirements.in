@@ -1,5 +1,6 @@
 jupyter
 jupyter_console
+matplotlib
 numpy
 pandas
 pyarrow
