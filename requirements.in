@@ -1,7 +1,11 @@
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
 jupyter
 jupyter_console
 matplotlib
 numpy
+openpyxl
 pandas
 pyarrow
 requests
