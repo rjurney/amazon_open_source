@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+    analysis:
+        build: .
+        ports:
+            - "8888:8888"
+        volumes:
+            - .:/amazon_open_source
+        environment:
+            - GITHUB_USERNAME
+            - GITHUB_TOKEN
