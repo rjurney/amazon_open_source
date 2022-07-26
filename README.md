@@ -87,7 +87,7 @@ If you feel any labels are wrong, first read the definitions in the README and c
 The labels for this dataset are:
 
 | Number | Code      | Description                      |
-|--------|-----------|----------------------------------|
+| ------ | --------- | -------------------------------- |
 | -1     | ABSTAIN   | No vote, for Labeling Functions  |
 | 0      | GENERAL   | A FOSS project of general appeal |
 | 1      | API       | An API library for AWS           |
@@ -101,7 +101,7 @@ unsupervised generative graphical model combines these weak labels into strong l
 looking at the overlap, conflict and coverage of each weak label set.
 
 | Logic                           | Fields                               | Label       | 200 Sample Accuracy |
-|---------------------------------|--------------------------------------|-------------|---------------------|
+| ------------------------------- | ------------------------------------ | ----------- | ------------------- |
 | If 'sdk' is in                  | `full_name`, `description`, `readme` | `API`       |                     |
 | If 'sample' is in               | `full_name`, `description`, `readme` | `EDUCATION` |                     |
 | If 'dataset' is in              | `full_name`, `description`, `readme` | `DATASET`   |                     |
@@ -119,7 +119,7 @@ looking at the overlap, conflict and coverage of each weak label set.
 
 ## Running the Analysis
 
-The actual analysis is in a Jupyter Notebook called [Amazon Open Source Analysis.ipynb](Amazon Open Source Analysis.ipynb).
+The actual analysis is in a Jupyter Notebook called [Amazon Open Source Analysis.ipynb](./3_Amazon_Open_Source_Analysis.ipynb).
 
 ### Creating a Personal Access Token
 
